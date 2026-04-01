@@ -75,7 +75,7 @@ updateThemeLabel(savedTheme);
 function updateThemeLabel(theme) {
   const isLight = theme === "light";
   themeIcon.textContent = isLight ? "☀" : "☾";
-  themeColorMeta.setAttribute("content", isLight ? "#7c3aed" : "#7c3aed");
+  themeColorMeta.setAttribute("content", isLight ? "#f3f4f6" : "#7c3aed");
 }
 
 themeToggle.addEventListener("click", () => {

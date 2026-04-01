@@ -6,6 +6,8 @@ const ASSETS = [
   "./script.js",
   "./manifest.json",
   "./assets/icons/icon.svg",
+  "./assets/icons/icon-192.png",
+  "./assets/icons/icon-512.png",
   "./assets/notes/konu-listesi.jpg",
   "./assets/notes/oksijenli-solunum.jpg",
   "./assets/notes/oksijensiz-solunum.jpg",
