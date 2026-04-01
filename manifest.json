@@ -1,11 +1,11 @@
 {
   "name": "Biyoloji Sınav Çalışması",
   "short_name": "Biyoloji Kampı",
-  "description": "12. sınıf biyoloji 2. dönem 1. yazılı için hazırlanmış offline destekli çalışma uygulaması.",
+  "description": "12. sınıf 2. dönem 1. yazılı biyoloji için premium tasarımlı ve offline çalışan çalışma uygulaması.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#09090f",
+  "background_color": "#070a14",
   "theme_color": "#7c3aed",
   "lang": "tr",
   "orientation": "portrait-primary",
