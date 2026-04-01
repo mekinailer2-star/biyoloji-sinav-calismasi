@@ -1,51 +1,75 @@
 const quizData = [
   {
-    question: "Oksijensiz solunumda ETS'nin son elektron alıcısı aşağıdakilerden hangisi olabilir?",
-    options: ["Nitrat", "Oksijen", "Klorofil", "Glikoz"],
+    question: "Organik moleküllere fosfat eklenmesine ne ad verilir?",
+    options: ["Defosforilasyon", "Fosforilasyon", "Denitrifikasyon", "Fotoliz"],
+    answer: 1,
+    explanation: "Fosfat eklenmesi fosforilasyon, koparılması defosforilasyondur."
+  },
+  {
+    question: "ATP parçalandığında hangi olay gerçekleşir?",
+    options: ["Fosforilasyon", "Defosforilasyon", "Nitrifikasyon", "Kalvin döngüsü"],
+    answer: 1,
+    explanation: "ATP'nin yıkımı defosforilasyon olayıdır."
+  },
+  {
+    question: "Engelmann deneyine göre fotosentezin en hızlı olduğu ışıklar hangileridir?",
+    options: ["Yeşil ve sarı", "Turuncu ve yeşil", "Kırmızı ve mor", "Mavi ve yeşil"],
+    answer: 2,
+    explanation: "Bakteri kolonileri kırmızı ve mor ışık bölgelerinde daha fazla birikmiştir."
+  },
+  {
+    question: "Işığa bağımlı tepkimelerde aşağıdakilerden hangisi sentezlenir?",
+    options: ["Yalnız glikoz", "ATP ve NADPH", "Yalnız laktik asit", "Nitrat ve nitrit"],
+    answer: 1,
+    explanation: "Işıklı evrede ATP ve NADPH sentezlenir."
+  },
+  {
+    question: "Işıktan bağımsız tepkimeler kloroplastın neresinde gerçekleşir?",
+    options: ["Grana", "Tilakoit lümeni", "Stroma", "Mitokondri matriksi"],
+    answer: 2,
+    explanation: "Kalvin döngüsü stromada gerçekleşir."
+  },
+  {
+    question: "Atmosfere verilen O₂'nin temel kaynağı hangisidir?",
+    options: ["Karbondioksit", "Glikoz", "Su", "ATP"],
+    answer: 2,
+    explanation: "İzotop deneyleri, atmosferik oksijenin sudan geldiğini göstermiştir."
+  },
+  {
+    question: "Kalvin döngüsünde karbondioksit kullanılarak oluşan 3 karbonlu temel ürün hangisidir?",
+    options: ["Pirüvat", "PGAL", "Asetaldehit", "Laktat"],
+    answer: 1,
+    explanation: "ATP ve NADPH kullanılarak PGAL molekülleri üretilir."
+  },
+  {
+    question: "Kemosentez yapan canlılar enerji kaynağı olarak neyi kullanır?",
+    options: ["Işık enerjisini", "İnorganik maddelerin oksitlenmesiyle elde edilen kimyasal enerjiyi", "Yalnız glikozu", "Yalnız oksijeni"],
+    answer: 1,
+    explanation: "Kemosentezde ışık yerine kimyasal enerji kullanılır."
+  },
+  {
+    question: "Nitrosomonas bakterileri hangi kavramla doğrudan ilişkilidir?",
+    options: ["Fermantasyon", "Nitrifikasyon", "Kalvin döngüsü", "Fotoliz"],
+    answer: 1,
+    explanation: "Nitrosomonas azotlu bileşikleri oksitleyerek nitrifikasyona katkı sağlar."
+  },
+  {
+    question: "Oksijensiz solunum ile fermantasyon arasındaki temel fark nedir?",
+    options: ["Fermantasyonda ETS çalışır", "Oksijensiz solunumda ETS çalışır", "İkisi de mitokondride olur", "İkisi de oksijen kullanır"],
+    answer: 1,
+    explanation: "Oksijensiz solunumda ETS bulunur; fermantasyonda bulunmaz."
+  },
+  {
+    question: "Laktik asit fermantasyonu aşağıdakilerden hangisinde görülebilir?",
+    options: ["Çizgili kaslar", "Kloroplast", "Nitrobacter", "Tilakoit zar"],
     answer: 0,
-    explanation: "Görsel notta oksijensiz solunum yapan bakterilerde ETS'nin son alıcısının nitrat olabildiği belirtiliyor."
-  },
-  {
-    question: "Etil alkol fermantasyonunda pirüvik asitten önce hangi ara ürün oluşur?",
-    options: ["Laktik asit", "Asetaldehit", "Asetil-CoA", "Nitrit"],
-    answer: 1,
-    explanation: "Pirüvik asitten bir CO₂ çıkar ve asetaldehit oluşur; sonra etil alkole dönüşür."
-  },
-  {
-    question: "Laktik asit fermantasyonunda aşağıdakilerden hangisi doğrudur?",
-    options: ["CO₂ oluşur", "Tek basamakta gerçekleşir", "Sadece bitkilerde görülür", "ETS zorunludur"],
-    answer: 1,
-    explanation: "Laktik asit fermantasyonu tek reaksiyon kademesinde gerçekleşir ve CO₂ üretilmez."
+    explanation: "Laktik asit fermantasyonu çizgili kaslarda ve bazı bakterilerde görülür."
   },
   {
     question: "Oksijenli solunum neden daha fazla ATP üretir?",
-    options: ["Sadece sitoplazmada olduğu için", "İnorganik bileşiklere kadar tam yıkım olduğu için", "Kloroplastta gerçekleştiği için", "CO₂ kullanmadığı için"],
+    options: ["Çünkü yalnız sitoplazmada gerçekleşir", "Çünkü organik madde tam yıkıma uğrar", "Çünkü ışık kullanılır", "Çünkü CO₂ tüketilir"],
     answer: 1,
-    explanation: "Notta, yıkım inorganik bileşiklere kadar sürdüğü için daha çok ATP ve ısı açığa çıktığı yazıyor."
-  },
-  {
-    question: "Nitrosomonas bakterileriyle ilişkilendirilen kavram hangisidir?",
-    options: ["Fotosentez", "Denitrifikasyon", "Nitrifikasyon", "Fermentasyon"],
-    answer: 2,
-    explanation: "Nitrosomonas'ın oluşturduğu süreç, bitkilerin kullanabileceği nitratların oluştuğu nitrifikasyondur."
-  },
-  {
-    question: "Kemosentezde sentez sırasında açığa çıkan oksijen neden dış ortama verilmez?",
-    options: ["Karaciğerde depolandığı için", "Enerji üretiminde kullanıldığı için", "Yalnızca bitkiler kullandığı için", "ATP'yi parçaladığı için"],
-    answer: 1,
-    explanation: "Görselde bu oksijenin enerji üretmede kullanıldığı için dışarı verilmediği yazıyor."
-  },
-  {
-    question: "Aşağıdakilerden hangisi laktik asit fermantasyonunun görüldüğü yerlerden biridir?",
-    options: ["Maya mantarları", "Çizgili kaslar", "Yaprak hücreleri", "Kök emici tüyleri"],
-    answer: 1,
-    explanation: "Laktik asit fermantasyonu çizgili kaslarda, yoğurt bakterilerinde ve bazı diğer hücrelerde gerçekleşir."
-  },
-  {
-    question: "Oksijenli solunumun dört evresinden biri hangisidir?",
-    options: ["Nitrifikasyon", "Glikoliz", "Denitrifikasyon", "Fotoliz"],
-    answer: 1,
-    explanation: "Notta glikoliz, Krebs döngüsü, asetil-CoA oluşumu ve ETS dört evre olarak verilmiş."
+    explanation: "İnorganik bileşiklere kadar tam yıkım olduğu için daha çok ATP açığa çıkar."
   }
 ];
 
@@ -62,7 +86,6 @@ const quizOptions = document.getElementById("quizOptions");
 const quizFeedback = document.getElementById("quizFeedback");
 const nextQuestionButton = document.getElementById("nextQuestionButton");
 const restartQuizButton = document.getElementById("restartQuizButton");
-const accordionItems = [...document.querySelectorAll(".accordion-item")];
 
 let deferredPrompt = null;
 let currentQuestion = 0;
@@ -75,7 +98,7 @@ updateThemeLabel(savedTheme);
 function updateThemeLabel(theme) {
   const isLight = theme === "light";
   themeIcon.textContent = isLight ? "☀" : "☾";
-  themeColorMeta.setAttribute("content", isLight ? "#f3f4f6" : "#7c3aed");
+  themeColorMeta.setAttribute("content", isLight ? "#eef2ff" : "#7c3aed");
 }
 
 themeToggle.addEventListener("click", () => {
@@ -99,13 +122,6 @@ installButton.addEventListener("click", async () => {
   deferredPrompt = null;
 });
 
-accordionItems.forEach((item) => {
-  const trigger = item.querySelector(".accordion-trigger");
-  trigger.addEventListener("click", () => {
-    item.classList.toggle("is-open");
-  });
-});
-
 function renderQuestion() {
   const item = quizData[currentQuestion];
   questionCounter.textContent = `${currentQuestion + 1} / ${quizData.length}`;
@@ -113,8 +129,8 @@ function renderQuestion() {
   quizQuestion.textContent = item.question;
   quizFeedback.textContent = "";
   selectedAnswer = null;
-
   quizOptions.innerHTML = "";
+
   item.options.forEach((option, index) => {
     const button = document.createElement("button");
     button.type = "button";
@@ -168,6 +184,7 @@ checklistInputs.forEach((input, index) => {
   input.checked = Boolean(savedChecklist[index]);
   input.addEventListener("change", updateChecklist);
 });
+
 updateChecklist();
 renderQuestion();
 

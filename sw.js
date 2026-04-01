@@ -1,4 +1,4 @@
-const CACHE_NAME = "biyoloji-yazili-v1";
+const CACHE_NAME = "biyoloji-yazili-v2";
 const ASSETS = [
   "./",
   "./index.html",
@@ -12,7 +12,12 @@ const ASSETS = [
   "./assets/notes/oksijenli-solunum.jpg",
   "./assets/notes/oksijensiz-solunum.jpg",
   "./assets/notes/kemosentez.jpg",
-  "./assets/notes/fermantasyon.jpg"
+  "./assets/notes/fermantasyon.jpg",
+  "./assets/notes/atp-fosforilasyon.jpg",
+  "./assets/notes/engelmann.jpg",
+  "./assets/notes/fotosentez-reaksiyonlari.jpg",
+  "./assets/notes/kalvin-dongusu.jpg",
+  "./assets/notes/kemosentez-ek.jpg"
 ];
 
 self.addEventListener("install", (event) => {

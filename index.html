@@ -9,7 +9,7 @@
     <meta name="apple-mobile-web-app-title" content="Biyoloji Kampı" />
     <meta
       name="description"
-      content="12. sınıf biyoloji 2. dönem 1. yazılı için hazırlanmış, görsellerdeki notları eksiksiz toplayan premium çalışma PWA'sı."
+      content="12. sınıf 2. dönem 1. yazılı biyoloji notlarını eksiksiz toplayan, premium tasarımlı, karanlık tema destekli ve offline çalışan PWA çalışma sitesi."
     />
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml" />
@@ -18,8 +18,10 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="noise"></div>
-    <header class="topbar">
+    <div class="page-glow page-glow--one"></div>
+    <div class="page-glow page-glow--two"></div>
+
+    <header class="topbar glass">
       <a class="brand" href="#hero">
         <span class="brand__badge">BIO</span>
         <span>
@@ -27,12 +29,16 @@
           <small>12. Sınıf · 2. Dönem · 1. Yazılı</small>
         </span>
       </a>
+
       <nav class="nav">
-        <a href="#konular">Konular</a>
-        <a href="#notlar">Notlar</a>
-        <a href="#sorular">Soru Dağılımı</a>
-        <a href="#quiz">Mini Quiz</a>
+        <a href="#kapsam">Kapsam</a>
+        <a href="#atp">ATP</a>
+        <a href="#fotosentez">Fotosentez</a>
+        <a href="#kemosentez">Kemosentez</a>
+        <a href="#solunum">Solunum</a>
+        <a href="#quiz">Quiz</a>
       </nav>
+
       <div class="topbar__actions">
         <button class="ghost-button" id="installButton" hidden>Uygulamayı Yükle</button>
         <button class="theme-toggle" id="themeToggle" aria-label="Temayı değiştir">
@@ -45,331 +51,533 @@
     <main>
       <section class="hero container" id="hero">
         <div class="hero__content glass">
-          <p class="eyebrow">Eksiksiz dijital çalışma sayfası</p>
-          <h1>Biyoloji yazılısında 100’lük hazırlık</h1>
+          <p class="eyebrow">Eksiksiz dijital çalışma alanı</p>
+          <h1>Bu notlarla yazılıda tam puan hedefi</h1>
           <p class="hero__lead">
-            Gönderdiğin görsellerdeki tüm biyoloji notları burada düzenli, okunabilir,
-            karanlık tema destekli ve mobil/masaüstü uyumlu bir PWA olarak toplandı.
+            Gönderdiğin görsellerdeki tüm bilgiler; ATP, fotosentez, Kalvin döngüsü,
+            kemosentez, hücresel solunum ve fermantasyon başlıkları altında yeniden
+            düzenlendi. Site PWA olarak çalışır, offline açılır, mobilde ve masaüstünde
+            eksiksiz görünür.
           </p>
+
           <div class="hero__chips">
             <span>HTML + CSS + JS</span>
             <span>PWA</span>
+            <span>Koyu tema</span>
             <span>Responsive</span>
             <span>Offline erişim</span>
           </div>
+
           <div class="hero__cta">
-            <a class="primary-button" href="#notlar">Notları Çalış</a>
-            <a class="secondary-button" href="#quiz">Kendini Test Et</a>
+            <a class="primary-button" href="#fotosentez">Fotosentezi Çalış</a>
+            <a class="secondary-button" href="#quiz">Mini Quiz Aç</a>
           </div>
         </div>
-        <div class="hero__panel glass">
-          <div class="hero__panel-top">
+
+        <aside class="hero__panel glass">
+          <div class="hero__panel-header">
             <span class="status-dot"></span>
-            <p>Yazılı Odak Özeti</p>
+            <p>Yazılı odak listesi</p>
           </div>
           <ul class="focus-list">
-            <li>Canlılık için enerji neden gereklidir?</li>
-            <li>Fotosentez şeması nasıl açıklanır?</li>
-            <li>Kemosentez nasıl işler?</li>
-            <li>Hücresel solunumun temel mantığı nedir?</li>
-            <li>Fotosentez-solunum ilişkisi nasıl yorumlanır?</li>
+            <li>Fosforilasyon ve defosforilasyon mantığını bil.</li>
+            <li>Işığa bağımlı ve bağımsız tepkimeleri ayır.</li>
+            <li>Engelmann deneyinden yorum çıkar.</li>
+            <li>Kalvin döngüsünde ATP ve NADPH kullanımını unutma.</li>
+            <li>Kemosentezi fotosentezle karıştırma.</li>
+            <li>Solunum ve fermantasyon farklarını tekrar et.</li>
           </ul>
           <div class="hero__scorecard">
             <strong>7</strong>
             <span>Toplam soru hedefi</span>
           </div>
-        </div>
+        </aside>
       </section>
 
-      <section class="container" id="sorular">
+      <section class="container" id="kapsam">
         <div class="section-heading">
           <p class="eyebrow">Sınav kapsamı</p>
-          <h2>Görselde verilen soru dağılımı</h2>
+          <h2>Soru dağılımı ve hızlı plan</h2>
         </div>
+
         <div class="grid grid--cards">
-          <article class="study-card">
+          <article class="study-card glass">
             <span class="study-card__count">1 Soru</span>
             <h3>Canlılığın devamı için enerji</h3>
-            <p>Canlılığın devamı için enerjinin gerekliliği açıklanır.</p>
+            <p>Enerjinin neden gerekli olduğu ve ATP’nin temel rolü sorulabilir.</p>
           </article>
-          <article class="study-card">
+          <article class="study-card glass">
             <span class="study-card__count">2 Soru</span>
             <h3>Fotosentez</h3>
-            <p>Fotosentez süreci şema üzerinde açıklanır.</p>
+            <p>Şemalar, ışığa bağımlı-bağımsız evreler, Engelmann ve Kalvin döngüsü.</p>
           </article>
-          <article class="study-card">
+          <article class="study-card glass">
             <span class="study-card__count">1 Soru</span>
             <h3>Kemosentez</h3>
-            <p>Kemosentez olayı açıklanır.</p>
+            <p>Kemosentezin tanımı, iki aşaması ve örnek bakteriler.</p>
           </article>
-          <article class="study-card">
+          <article class="study-card glass">
             <span class="study-card__count">2 Soru</span>
             <h3>Hücresel solunum</h3>
-            <p>Hücresel solunumun temel mekanizması açıklanır.</p>
+            <p>Oksijenli ve oksijensiz solunumun temel çalışma mantığı.</p>
           </article>
-          <article class="study-card study-card--wide">
+          <article class="study-card glass study-card--wide">
             <span class="study-card__count">1 Soru</span>
             <h3>Fotosentez ve solunum ilişkisi</h3>
-            <p>Fotosentez ve solunum ilişkisi ile ilgili çıkarımlarda bulunulur.</p>
+            <p>Biri diğerinin hammaddesini oluşturur; dönüşümler üzerinden yorum yapılır.</p>
+          </article>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card glass">
+            <strong>5</strong>
+            <span>Yeni görsel içerik eklendi</span>
+          </article>
+          <article class="stat-card glass">
+            <strong>10+</strong>
+            <span>Kritik kavram kutusu</span>
+          </article>
+          <article class="stat-card glass">
+            <strong>12</strong>
+            <span>Quiz sorusu</span>
+          </article>
+          <article class="stat-card glass">
+            <strong>Offline</strong>
+            <span>PWA ile internetsiz tekrar</span>
           </article>
         </div>
       </section>
 
-      <section class="container" id="konular">
+      <section class="container" id="atp">
         <div class="section-heading">
-          <p class="eyebrow">Hızlı tekrar</p>
-          <h2>Konu haritası</h2>
+          <p class="eyebrow">Enerji temeli</p>
+          <h2>ATP, fosforilasyon ve defosforilasyon</h2>
         </div>
+
+        <div class="feature-layout">
+          <article class="feature-card glass">
+            <div class="pill-row">
+              <span class="pill">Temel tanım</span>
+              <span class="pill pill--accent">Yüksek öncelik</span>
+            </div>
+            <p>
+              Organik moleküllere fosfat eklenmesine <strong>fosforilasyon</strong>, fosfat
+              grubunun koparılmasına ise <strong>defosforilasyon</strong> denir. Hücrede ATP
+              sentezi bir fosforilasyon olayıdır; ATP’nin parçalanması ise defosforilasyondur.
+            </p>
+
+            <div class="highlight-grid">
+              <div class="highlight-card">
+                <h3>ATP yapısı</h3>
+                <p>Adenin + riboz + 3 fosfat = ATP (adenozin trifosfat)</p>
+              </div>
+              <div class="highlight-card">
+                <h3>ADP yapısı</h3>
+                <p>Adenin + riboz + 2 fosfat = ADP (adenozin difosfat)</p>
+              </div>
+              <div class="highlight-card">
+                <h3>Fosforilasyon</h3>
+                <p>ADP + Pi + enerji → ATP</p>
+              </div>
+              <div class="highlight-card">
+                <h3>Defosforilasyon</h3>
+                <p>ATP → ADP + Pi + enerji</p>
+              </div>
+            </div>
+
+            <div class="formula-box formula-box--violet">
+              <strong>Şemadaki ek notlar</strong>
+              <ul>
+                <li>Adenin ile riboz arasında <strong>glikozit bağı</strong> bulunur.</li>
+                <li>Riboz ile fosfat arasında <strong>ester bağı</strong> bulunur.</li>
+                <li>Fosfatlar arasında <strong>yüksek enerjili fosfat bağları</strong> bulunur.</li>
+              </ul>
+            </div>
+          </article>
+
+          <figure class="feature-figure glass">
+            <img src="assets/notes/atp-fosforilasyon.jpg" alt="ATP, fosforilasyon ve defosforilasyon şeması" loading="lazy" />
+            <figcaption>ATP ↔ ADP dönüşümü, fosfat grupları ve bağlarla ilgili not görseli</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="container" id="fotosentez">
+        <div class="section-heading">
+          <p class="eyebrow">En kritik konu</p>
+          <h2>Fotosentez reaksiyonları eksiksiz özet</h2>
+        </div>
+
         <div class="grid grid--summary">
           <article class="summary-card glass">
-            <h3>Enerji neden gerekli?</h3>
+            <h3>Işığa bağımlı tepkimeler</h3>
             <p>
-              Canlılık faaliyetlerinin devamı, madde dönüşümleri, sentez-yıkım olayları ve
-              ATP üretimi için enerji zorunludur.
+              Işık kullanılır, klorofil görev yapar, tilakoit zarlarında gerçekleşir. ATP ve
+              NADPH üretilir; su parçalanır ve oksijen açığa çıkar.
             </p>
           </article>
           <article class="summary-card glass">
-            <h3>Fotosentez – Solunum bağı</h3>
+            <h3>Işıktan bağımsız tepkimeler</h3>
             <p>
-              Fotosentez organik madde ve oksijen üretirken, solunum bu organik maddeleri
-              parçalayarak ATP üretir. Biri diğerinin hammaddesini oluşturur.
+              Doğrudan ışık kullanılmaz; stromada gerçekleşir. Işıklı evreden gelen ATP ve
+              NADPH ile karbondioksitten organik besin sentezlenir.
             </p>
           </article>
           <article class="summary-card glass">
-            <h3>Oksijenli – Oksijensiz ayrımı</h3>
+            <h3>Kalvin döngüsü</h3>
             <p>
-              Elektron alıcısının oksijen olup olmaması, ATP verimini ve son ürünleri doğrudan
-              etkiler.
+              CO₂, 5 karbonlu ribulozdifosfat ile döngüye katılır; ATP ve NADPH harcanır,
+              PGAL oluşur, sonunda şeker sentezlenir.
             </p>
           </article>
           <article class="summary-card glass">
-            <h3>Kemosentez mantığı</h3>
+            <h3>Deney yorumu</h3>
             <p>
-              Bazı bakteri ve arkeler inorganik maddeleri oksitleyerek enerji elde eder, sonra bu
-              enerjiyi organik madde sentezinde kullanır.
+              Engelmann deneyi fotosentez hızının kırmızı ve mor ışıkta arttığını, yeşilde ise
+              en düşük olduğunu gösterir.
             </p>
+          </article>
+        </div>
+
+        <div class="timeline-grid">
+          <article class="timeline-card glass">
+            <span class="timeline-card__step">1. Kademe</span>
+            <h3>Işığa bağımlı tepkimeler</h3>
+            <ul>
+              <li>Işık kullanılır.</li>
+              <li>Klorofil molekülü görev alır.</li>
+              <li>ATP ve NADPH sentezlenir.</li>
+              <li>Su kullanılır, oksijen açığa çıkar.</li>
+              <li>Tilakoit ve granalarda gerçekleşir.</li>
+            </ul>
+          </article>
+          <article class="timeline-card glass">
+            <span class="timeline-card__step">2. Kademe</span>
+            <h3>Işıktan bağımsız tepkimeler</h3>
+            <ul>
+              <li>Doğrudan ışık kullanılmaz.</li>
+              <li>Dışarıdan alınan karbondioksit kullanılır.</li>
+              <li>ATP ve NADPH harcanır.</li>
+              <li>Organik besin sentezlenir.</li>
+              <li>Kloroplast stromasında, prokaryotlarda sitoplazmada görülür.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="feature-layout feature-layout--reverse">
+          <figure class="feature-figure glass">
+            <img src="assets/notes/fotosentez-reaksiyonlari.jpg" alt="Fotosentez reaksiyonları ve Kalvin döngüsü şeması" loading="lazy" />
+            <figcaption>Işık, su, karbondioksit, ATP, NADPH ve Kalvin döngüsü ilişkisi</figcaption>
+          </figure>
+
+          <article class="feature-card glass">
+            <div class="pill-row">
+              <span class="pill">Şema okuma</span>
+              <span class="pill">Sınav sorusu gelir</span>
+            </div>
+            <div class="check-columns">
+              <div>
+                <h3>Işıklı evrede bilmen gerekenler</h3>
+                <ul>
+                  <li>Işık enerjisi klorofil tarafından soğurulur.</li>
+                  <li>Su parçalanır; elektron, proton ve O₂ oluşur.</li>
+                  <li>ATP ve NADPH sentezlenir.</li>
+                  <li>Oluşan oksijen atmosferik oksijenin kaynağıdır.</li>
+                </ul>
+              </div>
+              <div>
+                <h3>Kalvin döngüsünde bilmen gerekenler</h3>
+                <ul>
+                  <li>Karbondioksit döngüye katılır.</li>
+                  <li>ATP ve NADPH kullanılarak PGAL üretilir.</li>
+                  <li>NADPH yükseltgenerek NADP⁺ hâline gelir.</li>
+                  <li>PGAL’den şeker sentezi gerçekleşir.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="formula-stack">
+              <div>
+                <strong>Genel denklem</strong>
+                <p>6 CO₂ + 6 H₂O — Işık / Klorofil → C₆H₁₂O₆ + 6 O₂</p>
+              </div>
+              <div>
+                <strong>Yer bilgisi</strong>
+                <p>Işığa bağımlı: tilakoit | Işıktan bağımsız: stroma</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid grid--double">
+          <article class="insight-card glass">
+            <h3>Engelmann deneyi</h3>
+            <p>
+              Theodore Engelmann; ipliksi algi (Spirogyra) ve aerob bakterileri kullanarak
+              fotosentez hızı ile görünür ışık spektrumu arasındaki ilişkiyi göstermiştir.
+            </p>
+            <ol>
+              <li>İpliksi alg su dolu bir kaba yerleştirilir.</li>
+              <li>Prizmadan geçirilen ışık farklı renklere ayrılarak algin üzerine düşürülür.</li>
+              <li>Ortama oksijen seven bakteriler eklenir.</li>
+              <li>Kırmızı ve mor bölgelerde bakteri kolonileri artar.</li>
+              <li>Yeşil bölgede en az bakteri birikir.</li>
+            </ol>
+            <div class="formula-box formula-box--cyan">
+              <strong>Sonuç</strong>
+              <p>En hızlı fotosentez kırmızı ve mor ışıkta, en yavaş fotosentez yeşil ışıkta gerçekleşir.</p>
+            </div>
+          </article>
+
+          <figure class="insight-figure glass">
+            <img src="assets/notes/engelmann.jpg" alt="Engelmann deneyi ve görünür ışık spektrumu görseli" loading="lazy" />
+            <figcaption>Oksijen seven bakterilerin yoğunlaştığı bölge, fotosentez hızını gösterir.</figcaption>
+          </figure>
+        </div>
+
+        <div class="grid grid--double">
+          <article class="insight-card glass">
+            <h3>İzotoplu su ve karbondioksit deneyleri</h3>
+            <ul>
+              <li>İzotop su molekülleriyle yapılan deneyler, sudaki hidrojenin glikoz yapısına katıldığını göstermiştir.</li>
+              <li>Suyun parçalanması sonucu oluşan O₂ atmosfere verilir.</li>
+              <li>Karbondioksitte bulunan karbon ve oksijenin glikoz yapısına katıldığı gösterilmiştir.</li>
+              <li>Işıktan bağımsız tepkimeler enzime bağlı olduğu için sıcaklıktan daha çok etkilenir.</li>
+              <li>Işıktan bağımsız evrede 3 karbonlu PGAL molekülleri oluşur.</li>
+            </ul>
+            <div class="formula-box formula-box--green">
+              <strong>Kritik çıkarım</strong>
+              <p>Atmosfere verilen O₂’nin kaynağı sudur; glikozun karbon kaynağı ise CO₂’dir.</p>
+            </div>
+          </article>
+
+          <figure class="insight-figure glass">
+            <img src="assets/notes/kalvin-dongusu.jpg" alt="İzotop su bilgisi ve Kalvin döngüsü görseli" loading="lazy" />
+            <figcaption>Kalvin döngüsü, PGAL oluşumu ve ATP-NADPH kullanımı</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="container" id="kemosentez">
+        <div class="section-heading">
+          <p class="eyebrow">Yeni eklenen konu</p>
+          <h2>Kemosentez mantığı ve örnek tepkimeler</h2>
+        </div>
+
+        <div class="feature-layout">
+          <article class="feature-card glass">
+            <div class="pill-row">
+              <span class="pill">Tanım</span>
+              <span class="pill pill--accent">Karıştırma</span>
+            </div>
+            <p>
+              Klorofilli olmayan bazı bakteri ve arke türleri, besin sentezlemek için ışık yerine
+              inorganik maddeleri oksitleyerek elde ettikleri <strong>kimyasal enerjiyi</strong>
+              kullanır. Bu şekilde besin sentezlenmesine <strong>kemosentez</strong> denir.
+            </p>
+
+            <div class="highlight-grid">
+              <div class="highlight-card">
+                <h3>1. aşama</h3>
+                <p>İnorganik maddelerden ayrılan elektronlar ETS üzerinden oksijene taşınır; ATP ve NADH sentezlenir.</p>
+              </div>
+              <div class="highlight-card">
+                <h3>2. aşama</h3>
+                <p>ATP ve NADH kullanılarak CO₂ indirgenir, organik besin sentezlenir.</p>
+              </div>
+              <div class="highlight-card">
+                <h3>Neden O₂ verilmez?</h3>
+                <p>Sentez sırasında açığa çıkan oksijen enerji üretiminde kullanılır.</p>
+              </div>
+              <div class="highlight-card">
+                <h3>Kim yapar?</h3>
+                <p>Bazı bakteri ve arkeler; bitkiler ve hayvanlar kemosentez yapmaz.</p>
+              </div>
+            </div>
+
+            <div class="formula-stack">
+              <div>
+                <strong>Genel sentez mantığı</strong>
+                <p>CO₂ + H₂O → organik besin + O₂</p>
+              </div>
+              <div>
+                <strong>Kazanım tepkimeleri</strong>
+                <p>İnorganik bileşik + O₂ → inorganik tuz + enerji</p>
+              </div>
+            </div>
+          </article>
+
+          <figure class="feature-figure glass">
+            <img src="assets/notes/kemosentez-ek.jpg" alt="Kemosentez tanımı ve birinci aşama reaksiyonu görseli" loading="lazy" />
+            <figcaption>Kemosentezin tanımı ve ilk aşamadaki enerji kazanımı</figcaption>
+          </figure>
+        </div>
+
+        <div class="grid grid--double">
+          <article class="insight-card glass">
+            <h3>Örnek bakteri ve süreçler</h3>
+            <ul>
+              <li><strong>Nitrosomonas</strong>, NH₃ / NH₄⁺ / NO₂ gibi azotlu bileşikleri oksitler.</li>
+              <li>Bitkilerin kullanabileceği nitratların oluşması <strong>nitrifikasyon</strong> olarak adlandırılır.</li>
+              <li>Nitritler, <strong>Nitrobacter</strong> tarafından nitratlara dönüştürülebilir.</li>
+              <li>Kükürt bakterileri H₂S ve S gibi bileşiklerden enerji elde eder.</li>
+              <li>Demir bakterileri demir bileşikleri üzerinden enerji kazanabilir.</li>
+            </ul>
+          </article>
+
+          <article class="insight-card glass">
+            <h3>Örnek eşitlikler</h3>
+            <div class="formula-stack">
+              <div>
+                <p>2 NH₃ + 3 O₂ → 2 HNO₂ + 2 H₂O + enerji</p>
+              </div>
+              <div>
+                <p>2 HNO₂ + O₂ → 2 HNO₃ + enerji</p>
+              </div>
+              <div>
+                <p>2 H₂S + O₂ → 2 H₂O + 2 S + enerji</p>
+              </div>
+              <div>
+                <p>4 FeCO₃ + O₂ + 6 H₂O → 4 Fe(OH)₃ + 4 CO₂ + enerji</p>
+              </div>
+            </div>
           </article>
         </div>
       </section>
 
-      <section class="container" id="notlar">
+      <section class="container" id="solunum">
         <div class="section-heading">
-          <p class="eyebrow">Detaylı çalışma notları</p>
-          <h2>Görsellerdeki içerikler düzenlenmiş halde</h2>
+          <p class="eyebrow">Eski içerik korundu</p>
+          <h2>Hücresel solunum ve fermantasyon tekrar alanı</h2>
         </div>
 
-        <div class="accordion-group">
-          <article class="accordion-item glass is-open">
-            <button class="accordion-trigger" type="button">
-              <span>II. Oksijenli Solunum</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="note-layout">
-                <div>
-                  <p>
-                    Organik besin monomerlerinin; oksijen, enzimler ve ATP yardımıyla dolaylı
-                    olarak yıkılmasıdır. Bu yıkılma inorganik bileşiklere kadar gerçekleştiği için,
-                    daha çok ATP ve daha çok ısı enerjisi açığa çıkar.
-                  </p>
-                  <ul>
-                    <li>
-                      Oksijenli solunumda glikoz molekülü oksijenle doğrudan tepkimeye girmez.
-                      Çünkü glikozun ön yıkımı sitoplazmada gerçekleşir, oksijen ise mitokondride
-                      kullanılır.
-                    </li>
-                    <li>
-                      Oksijenli solunum <strong>glikoliz</strong>, <strong>Krebs döngüsü</strong>,
-                      <strong>pirüvik asitten asetil-CoA oluşması</strong> ve <strong>ETS</strong>
-                      olmak üzere dört evreden oluşur.
-                    </li>
-                  </ul>
-                  <div class="formula-box">
-                    <strong>Akılda tut:</strong>
-                    <p>Oksijenli solunum = Daha fazla ATP + Son aşamada oksijen kullanımı</p>
-                  </div>
-                </div>
-                <figure class="note-figure">
-                  <img src="assets/notes/oksijenli-solunum.jpg" alt="Oksijenli solunum not görseli" loading="lazy" />
-                </figure>
-              </div>
-            </div>
+        <div class="topic-grid">
+          <article class="topic-card glass">
+            <h3>Oksijenli solunum</h3>
+            <p>
+              Organik besin monomerlerinin enzimler yardımıyla inorganik bileşiklere kadar
+              parçalanmasıdır. Daha çok ATP ve daha çok ısı enerjisi açığa çıkar.
+            </p>
+            <ul>
+              <li>Glikoz önce sitoplazmada ön yıkıma uğrar.</li>
+              <li>Oksijen doğrudan glikozla tepkimeye girmez; mitokondride görev alır.</li>
+              <li>Glikoliz, asetil-CoA oluşumu, Krebs döngüsü ve ETS olmak üzere dört evreden oluşur.</li>
+            </ul>
           </article>
 
-          <article class="accordion-item glass">
-            <button class="accordion-trigger" type="button">
-              <span>III. Oksijensiz Solunum</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="note-layout">
-                <div>
-                  <p>
-                    Bazı bakteri türleri oksijen kullanmadan Krebs döngüsü ve ETS yardımıyla enerji
-                    üretebilir. Bu olaya <strong>oksijensiz solunum</strong> denir.
-                  </p>
-                  <ul>
-                    <li>Elektronlar sülfat, kükürt, nitrat, karbondioksit ve demir gibi moleküllere aktarılır.</li>
-                    <li>Elektronların ETS’de taşınması sırasında açığa çıkan enerji ile ATP sentezlenir.</li>
-                    <li>Oksijensiz solunumda, oksijenli solunuma göre daha az sayıda ATP sentezlenir.</li>
-                    <li>
-                      Topraktaki nitrat, oksijensiz solunum yapan bakteriler tarafından ETS
-                      kullanılarak moleküler azota dönüştürülebilir. Bu olaya
-                      <strong>denitrifikasyon</strong> denir.
-                    </li>
-                    <li>Bu bakterilerde ETS’deki son alıcı nitrat molekülleridir.</li>
-                  </ul>
-                </div>
-                <figure class="note-figure">
-                  <img src="assets/notes/oksijensiz-solunum.jpg" alt="Oksijensiz solunum not görseli" loading="lazy" />
-                </figure>
-              </div>
-            </div>
+          <article class="topic-card glass">
+            <h3>Oksijensiz solunum</h3>
+            <p>
+              Bazı bakteriler, oksijen kullanmadan Krebs ve ETS yardımıyla enerji üretebilir.
+              Son elektron alıcısı nitrat, sülfat, kükürt, karbondioksit ve demir gibi maddeler olabilir.
+            </p>
+            <ul>
+              <li>ETS çalıştığı için fermantasyondan farklıdır.</li>
+              <li>Oksijenli solunuma göre daha az ATP sentezlenir.</li>
+              <li>Denitrifikasyon bu başlık altında değerlendirilir.</li>
+            </ul>
           </article>
 
-          <article class="accordion-item glass">
-            <button class="accordion-trigger" type="button">
-              <span>Kemosentez</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="note-layout">
-                <div>
-                  <p>
-                    İkinci aşamadaki reaksiyon, elde edilen enerjiyle besin sentezini sağlar. ATP ve
-                    NADH kullanılarak karbondioksit indirgenir ve organik madde sentezlenir.
-                    Sentez sırasında açığa çıkan oksijen enerji üretiminde kullanıldığı için dış ortama
-                    oksijen verilmez.
-                  </p>
-                  <div class="formula-box">
-                    <strong>Genel eşitlik</strong>
-                    <p>CO₂ + H₂O → Glikoz + O₂</p>
-                  </div>
-                  <ul>
-                    <li>Kemosentez yapan bakteri ve arke türlerinin oksitlediği bileşik farklıdır.</li>
-                    <li>
-                      <strong>Nitrosomonas</strong> türü bakteriler azotlu bileşikleri (NH₃, NH₄⁺ ve
-                      NO₂) oksitler; bitkilerin kullanabileceği nitrat tuzlarını oluştururlar. Bu
-                      olaya <strong>nitrifikasyon</strong> denir.
-                    </li>
-                  </ul>
-                  <div class="formula-stack">
-                    <div>
-                      <p>2 NH₃ + 3 O₂ → 2 HNO₂ + 2 H₂O + Enerji</p>
-                      <small>(Amonyak) → (Nitröz asit)</small>
-                    </div>
-                    <div>
-                      <p>2 HNO₂ + O₂ → 2 HNO₃ + Enerji</p>
-                      <small>(Nitrit) → (Nitrik asit)</small>
-                    </div>
-                    <div>
-                      <p>2 H₂S + O₂ → 2 H₂O + 2 S + Enerji</p>
-                      <small>Kükürt ve sülfit bakterileri</small>
-                    </div>
-                    <div>
-                      <p>4 FeCO₃ + O₂ + 6 H₂O → 4 Fe(OH)₃ + 4 CO₂ + Enerji</p>
-                      <small>Demir bakterileri</small>
-                    </div>
-                  </div>
-                  <ul>
-                    <li>
-                      Nitrosomonas türünden bakterilerin ürettiği nitrit, Nitrobakter cinsine ait türler
-                      tarafından bir kez daha oksitlenerek nitratlara çevrilir.
-                    </li>
-                    <li>
-                      Başka bir grup bakteri ise kükürtlü bileşikleri (H₂S ve S) oksitler.
-                      Sonuçta bitkilerin kullanabileceği sülfat tuzları oluşur.
-                    </li>
-                    <li>Demir bakterileri de demir bileşikleri üzerinden enerji kazanabilir.</li>
-                  </ul>
-                </div>
-                <figure class="note-figure">
-                  <img src="assets/notes/kemosentez.jpg" alt="Kemosentez not görseli" loading="lazy" />
-                </figure>
-              </div>
-            </div>
+          <article class="topic-card glass">
+            <h3>Fermantasyon</h3>
+            <p>
+              ETS kullanılmadan, glikoliz sonucu oluşan pirüvik asidin farklı son ürünlere dönüşmesiyle
+              NAD⁺ yenilenir ve az miktarda enerji üretimi sürer.
+            </p>
+            <ul>
+              <li>Etil alkol fermantasyonu: pirüvat → asetaldehit → etil alkol</li>
+              <li>Laktik asit fermantasyonu: pirüvat → laktik asit</li>
+              <li>Laktik asit fermantasyonu çizgili kaslarda ve yoğurt bakterilerinde görülür.</li>
+            </ul>
           </article>
+        </div>
 
-          <article class="accordion-item glass">
-            <button class="accordion-trigger" type="button">
-              <span>Fermantasyon: Etil Alkol ve Laktik Asit</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="note-layout">
-                <div>
-                  <div class="subnote">
-                    <h3>A. Etil Alkol Fermantasyonu</h3>
-                    <ul>
-                      <li>
-                        Maya mantarları, bazı bakteri türleri ve oksijensiz ortamda kalan bitki
-                        tohumlarında görülen fermantasyon çeşididir.
-                      </li>
-                      <li>
-                        Glikoliz sonucunda oluşan pirüvik asitten bir molekül karbondioksit çıkar ve
-                        asetaldehit oluşur.
-                      </li>
-                      <li>
-                        Asetaldehit, NADH’daki hidrojenleri alarak etil alkol oluşturur. Böylece
-                        yükseltgenen NAD⁺ molekülü glikolizde tekrar kullanılabilir.
-                      </li>
-                      <li>Bu reaksiyon aynı zamanda ortamda pirüvat ve hidrojen birikmesini önler.</li>
-                    </ul>
-                    <div class="formula-box">
-                      <p>Glikoz (6C) → Pirüvik asit (3C) → Asetaldehit (2C) → Etil alkol (2C)</p>
-                    </div>
-                  </div>
-                  <div class="subnote">
-                    <h3>B. Laktik Asit Fermantasyonu</h3>
-                    <ul>
-                      <li>
-                        Omurgalı hayvanların ve insanların çizgili kaslarında, yoğurt bakterilerinde,
-                        memelilerin olgun alyuvar hücrelerinde ve bazı mantarlarda gerçekleşir.
-                      </li>
-                      <li>
-                        Pirüvik asitin laktik aside dönüşümü tek reaksiyon kademesinde gerçekleşir;
-                        çünkü CO₂ üretilmez.
-                      </li>
-                      <li>
-                        Laktik asit insana yorgunluk hissi verir. Kanda bulunan laktik asit miktarı
-                        arttıkça insanın uykusu gelir.
-                      </li>
-                      <li>
-                        Laktik asit, yeterli oksijen sağlandığı zaman kasların daha iyi çalışmasını
-                        sağlar. Bu nedenle egzersizlerden önce ısınma hareketleri yapılır.
-                      </li>
-                      <li>
-                        Çizgili kaslardan kana geçen laktik asit karaciğere taşınır; burada tekrar
-                        pirüvik aside ve glikoza çevrilir.
-                      </li>
-                      <li>
-                        Çizgili kas hücrelerine yeterli oksijen geldiği zaman, laktik asit tekrar
-                        pirüvata dönüşür ve oksijenli solunuma katılır.
-                      </li>
-                    </ul>
-                    <div class="formula-box">
-                      <p>Glikoz (6C) → Pirüvik asit (3C) → Laktik asit (3C)</p>
-                    </div>
-                  </div>
-                </div>
-                <figure class="note-figure">
-                  <img src="assets/notes/fermantasyon.jpg" alt="Fermantasyon not görseli" loading="lazy" />
-                </figure>
-              </div>
-            </div>
-          </article>
+        <div class="image-strip">
+          <figure class="mini-figure glass">
+            <img src="assets/notes/oksijenli-solunum.jpg" alt="Oksijenli solunum görseli" loading="lazy" />
+            <figcaption>Oksijenli solunum</figcaption>
+          </figure>
+          <figure class="mini-figure glass">
+            <img src="assets/notes/oksijensiz-solunum.jpg" alt="Oksijensiz solunum görseli" loading="lazy" />
+            <figcaption>Oksijensiz solunum</figcaption>
+          </figure>
+          <figure class="mini-figure glass">
+            <img src="assets/notes/fermantasyon.jpg" alt="Fermantasyon görseli" loading="lazy" />
+            <figcaption>Fermantasyon</figcaption>
+          </figure>
+          <figure class="mini-figure glass">
+            <img src="assets/notes/kemosentez.jpg" alt="Eski kemosentez görseli" loading="lazy" />
+            <figcaption>Ek kemosentez notu</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="container" id="karsilastirma">
+        <div class="section-heading">
+          <p class="eyebrow">Kafa karışıklığını bitir</p>
+          <h2>Hızlı karşılaştırma tablosu</h2>
+        </div>
+
+        <div class="comparison-card glass">
+          <div class="comparison-row comparison-row--head">
+            <span>Başlık</span>
+            <span>Fotosentez</span>
+            <span>Kemosentez</span>
+            <span>Solunum</span>
+          </div>
+          <div class="comparison-row">
+            <span>Enerji kaynağı</span>
+            <span>Işık</span>
+            <span>İnorganik madde oksidasyonu</span>
+            <span>Organik madde yıkımı</span>
+          </div>
+          <div class="comparison-row">
+            <span>Kim yapar?</span>
+            <span>Klorofilli canlılar</span>
+            <span>Bazı bakteri ve arkeler</span>
+            <span>Birçok canlı hücre</span>
+          </div>
+          <div class="comparison-row">
+            <span>Organik besin üretimi</span>
+            <span>Var</span>
+            <span>Var</span>
+            <span>Yok</span>
+          </div>
+          <div class="comparison-row">
+            <span>Oksijen ilişkisi</span>
+            <span>Işıklı evrede oluşabilir</span>
+            <span>Enerji üretiminde kullanılabilir</span>
+            <span>Oksijenli türde kullanılır</span>
+          </div>
         </div>
       </section>
 
       <section class="container" id="gallery">
         <div class="section-heading">
-          <p class="eyebrow">Orijinal görseller</p>
-          <h2>Kaynak notlar</h2>
+          <p class="eyebrow">Kaynak alanı</p>
+          <h2>Tüm görseller sitede yer alıyor</h2>
         </div>
+
         <div class="gallery-grid">
           <figure class="gallery-item glass">
-            <img src="assets/notes/konu-listesi.jpg" alt="Konu listesi" loading="lazy" />
-            <figcaption>Konu ve soru dağılımı</figcaption>
+            <img src="assets/notes/atp-fosforilasyon.jpg" alt="ATP ve fosforilasyon not görseli" loading="lazy" />
+            <figcaption>ATP, ADP, fosforilasyon ve defosforilasyon</figcaption>
+          </figure>
+          <figure class="gallery-item glass">
+            <img src="assets/notes/engelmann.jpg" alt="Engelmann deneyi görseli" loading="lazy" />
+            <figcaption>Engelmann deneyi ve ışık renkleri</figcaption>
+          </figure>
+          <figure class="gallery-item glass">
+            <img src="assets/notes/fotosentez-reaksiyonlari.jpg" alt="Fotosentez reaksiyonları görseli" loading="lazy" />
+            <figcaption>Fotosentez reaksiyonları</figcaption>
+          </figure>
+          <figure class="gallery-item glass">
+            <img src="assets/notes/kalvin-dongusu.jpg" alt="Kalvin döngüsü görseli" loading="lazy" />
+            <figcaption>İzotop bilgisi ve Kalvin döngüsü</figcaption>
+          </figure>
+          <figure class="gallery-item glass">
+            <img src="assets/notes/kemosentez-ek.jpg" alt="Kemosentez ek görseli" loading="lazy" />
+            <figcaption>Kemosentez tanımı</figcaption>
           </figure>
           <figure class="gallery-item glass">
             <img src="assets/notes/oksijenli-solunum.jpg" alt="Oksijenli solunum görseli" loading="lazy" />
@@ -380,12 +588,12 @@
             <figcaption>Oksijensiz solunum</figcaption>
           </figure>
           <figure class="gallery-item glass">
-            <img src="assets/notes/kemosentez.jpg" alt="Kemosentez görseli" loading="lazy" />
-            <figcaption>Kemosentez</figcaption>
+            <img src="assets/notes/kemosentez.jpg" alt="Kemosentez detay görseli" loading="lazy" />
+            <figcaption>Kemosentez detay notu</figcaption>
           </figure>
           <figure class="gallery-item glass gallery-item--wide">
             <img src="assets/notes/fermantasyon.jpg" alt="Fermantasyon görseli" loading="lazy" />
-            <figcaption>Etil alkol ve laktik asit fermantasyonu</figcaption>
+            <figcaption>Fermantasyon notu</figcaption>
           </figure>
         </div>
       </section>
@@ -393,11 +601,12 @@
       <section class="container" id="quiz">
         <div class="section-heading">
           <p class="eyebrow">Kendini dene</p>
-          <h2>Mini quiz</h2>
+          <h2>Yazılı öncesi mini quiz</h2>
         </div>
+
         <div class="quiz-shell glass">
           <div class="quiz-meta">
-            <span id="questionCounter">1 / 8</span>
+            <span id="questionCounter">1 / 12</span>
             <div class="quiz-progress">
               <span id="quizProgress"></span>
             </div>
@@ -414,24 +623,27 @@
 
       <section class="container" id="checklist">
         <div class="section-heading">
-          <p class="eyebrow">Yazılı öncesi son tur</p>
-          <h2>Çalışma kontrol listesi</h2>
+          <p class="eyebrow">Son tekrar</p>
+          <h2>Yazılı kontrol listesi</h2>
         </div>
-        <div class="checklist glass" id="checklistBox">
-          <label><input type="checkbox" data-check-item /> Oksijenli ve oksijensiz solunumu ayırt edebiliyorum.</label>
-          <label><input type="checkbox" data-check-item /> Denitrifikasyon ve nitrifikasyon kavramlarını karıştırmıyorum.</label>
-          <label><input type="checkbox" data-check-item /> Etil alkol ve laktik asit fermantasyonu farklarını biliyorum.</label>
-          <label><input type="checkbox" data-check-item /> Kemosentez yapan bakteri örneklerini ve denklemleri tekrar ettim.</label>
-          <label><input type="checkbox" data-check-item /> Fotosentez-solunum ilişkisini yorumlayabiliyorum.</label>
+
+        <div class="checklist glass">
+          <label><input type="checkbox" data-check-item /> Fosforilasyon ve defosforilasyon arasındaki farkı biliyorum.</label>
+          <label><input type="checkbox" data-check-item /> ATP, ADP ve fosfat ilişkisini şema üzerinden açıklayabiliyorum.</label>
+          <label><input type="checkbox" data-check-item /> Işığa bağımlı ve bağımsız tepkimeleri karıştırmıyorum.</label>
+          <label><input type="checkbox" data-check-item /> Engelmann deneyinin sonucunu yorumlayabiliyorum.</label>
+          <label><input type="checkbox" data-check-item /> Kalvin döngüsünde ATP ve NADPH kullanımını biliyorum.</label>
+          <label><input type="checkbox" data-check-item /> Kemosentezin iki aşamasını ve örnek bakterileri tekrar ettim.</label>
+          <label><input type="checkbox" data-check-item /> Oksijenli solunum, oksijensiz solunum ve fermantasyonu ayırt edebiliyorum.</label>
           <div class="checklist__footer">
-            <strong id="checklistStatus">0 / 5 tamamlandı</strong>
-            <span>Hepsini işaretle, sınav öncesi son tekrar bitsin.</span>
+            <strong id="checklistStatus">0 / 7 tamamlandı</strong>
+            <span>Hepsi tamamlandığında sınav öncesi son turun bitmiş olur.</span>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer container">
       <div>
         <strong>Made by Mek</strong>
         <p>2026</p>
